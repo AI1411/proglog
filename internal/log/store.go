@@ -30,8 +30,8 @@ func newStore(f *os.File) (*store, error) {
 	size := uint64(fi.Size())
 	return &store{
 		File: f,
-		buf:  bufio.NewWriter(f),
 		size: size,
+		buf:  bufio.NewWriter(f),
 	}, nil
 }
 
@@ -74,14 +74,14 @@ func (s *store) ReadAt(p []byte, off int64) (int, error) {
 	if err := s.buf.Flush(); err != nil {
 		return 0, err
 	}
-
 	return s.File.ReadAt(p, off)
 }
 
 func (s *store) Close() error {
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	if err := s.buf.Flush(); err != nil {
+	err := s.buf.Flush()
+	if err != nil {
 		return err
 	}
 	return s.File.Close()
