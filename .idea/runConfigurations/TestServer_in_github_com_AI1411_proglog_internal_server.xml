@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="TestServer in github.com/AI1411/proglog/internal/server" type="GoTestRunConfiguration" factoryName="Go Test" nameIsGenerated="true">
+    <module name="proglog" />
+    <working_directory value="$PROJECT_DIR$/internal/server" />
+    <root_directory value="$PROJECT_DIR$" />
+    <kind value="PACKAGE" />
+    <package value="github.com/AI1411/proglog/internal/server" />
+    <directory value="$PROJECT_DIR$" />
+    <filePath value="$PROJECT_DIR$" />
+    <framework value="gotest" />
+    <pattern value="^\QTestServer\E$" />
+    <method v="2" />
+  </configuration>
+</component>
